@@ -5,7 +5,7 @@ node_js:
   - node
 
 before-install:
-  - npm ci
+  - npm install readline-sync
 
 install: make
 
