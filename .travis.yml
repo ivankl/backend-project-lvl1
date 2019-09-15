@@ -2,15 +2,7 @@
 
 language: node_js
 node_js:
-  - node
-
-before-install:
-  - npm install readline-sync
-
-install: make
-
-install:
-  - make install_eslint
+  - 12
 
 script:
   - make lint
