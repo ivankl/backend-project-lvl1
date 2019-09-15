@@ -4,6 +4,13 @@ language: node_js
 node_js:
   - node
 
+before-install:
+  - npm ci
+
+install: make
+
+install:
+  - make install_eslint
+
 script:
   - make lint
-  - make test
