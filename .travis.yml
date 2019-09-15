@@ -4,5 +4,10 @@ language: node_js
 node_js:
   - node
 
+install: make
+
+install: 
+  - make install
+
 script:
   - make lint
