@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 import { brainGame } from '..';
 
-brainGame('even');
+brainGame('calc');
