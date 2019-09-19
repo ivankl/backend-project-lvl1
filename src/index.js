@@ -90,14 +90,14 @@ export const expectedResult = (mode) => {
   return result;
 };
 
-export const userReplyCheck = (desiredAnswer, name) => {
+export const userReplyCheck = (expectedAnswer, name) => {
   const reply = readLineSync.question('Your answer: ').toLowerCase();
-  if (desiredAnswer === reply) {
+  if (expectedAnswer === reply) {
     console.log('Correct!');
-    return 0;
+    return 'Correct';
   }
-  console.log(`'${reply}' is wrong answer ;(. Correct answer was '${desiredAnswer}'.\nLet's try again, ${name}`);
-  return 1;
+  console.log(`'${reply}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${name}!`);
+  return 'Wrong';
 };
 
 export const brainGame = (gameMode) => {
@@ -105,7 +105,7 @@ export const brainGame = (gameMode) => {
   const name = user();
   let correctAnswers = 0;
   while (correctAnswers < 3) {
-    if (userReplyCheck(expectedResult(mode), name) === 0) {
+    if (userReplyCheck(expectedResult(mode), name) === 'Correct') {
       correctAnswers += 1;
     } else {
       correctAnswers = 0;
