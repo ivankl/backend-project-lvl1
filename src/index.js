@@ -34,5 +34,5 @@ export const brainGame = () => {
       correctAnswers += 0;
     }
   }
-  console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}!`);
 };
