@@ -31,8 +31,6 @@ export const gameModeCheck = (mode) => {
   return gameId;
 };
 
-export const getRandomNumber = () => Math.floor(Math.random() * Math.floor(100));
-
 export const expectedResult = (mode) => {
   let result;
   switch (mode) {

@@ -1,4 +1,4 @@
-import { getRandomNumber } from '..';
+import { getRandomNumber } from './randomNumber';
 
 const getRandomOperation = () => {
   let operand;

@@ -1,4 +1,4 @@
-import { getRandomNumber } from '..';
+import { getRandomNumber } from './randomNumber';
 
 export const euclidAlgorhytm = () => {
   const num1 = getRandomNumber();
