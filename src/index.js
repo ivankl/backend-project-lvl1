@@ -17,6 +17,10 @@ export const gameModeCheck = (mode) => {
       console.log('\nWelcome to the Brain Games!\nWhat is the result of the expression?\n');
       gameId = 1;
       break;
+    case 'gcd':
+      console.log('\nWelcome to the Brain Games!\nFind the greatest common divisor of given numbers.\n');
+      gameId = 2;
+      break;
     default:
       console.log('Invalid game mode');
       break;
@@ -45,8 +49,10 @@ export const getRandomOperation = () => {
   return operand;
 };
 
-export const getOperationResult = (a, b, operation) => {
+export const getOperationResult = (operation) => {
   let operationRes;
+  const a = getRandomNumber();
+  const b = getRandomNumber();
   switch (operation) {
     case '+':
       operationRes = a + b;
@@ -61,32 +67,48 @@ export const getOperationResult = (a, b, operation) => {
       console.log('Invalid operation');
       break;
   }
+  const expression = `${a} ${operation} ${b}`;
+  console.log(`Question: ${expression}`);
   return operationRes;
 };
 
+export const evenCheck = () => {
+  const expression = getRandomNumber();
+  console.log(`Question: ${expression}`);
+  return (expression % 2 === 0 ? 'yes' : 'no');
+};
+
+export const euclidAlgorhytm = () => {
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
+  const iter = (a, b) => {
+    if (a % b === 0) {
+      return b;
+    }
+    return iter(b, a % b);
+  };
+  console.log(`Question: ${num1} ${num2}`);
+  return (num1 > num2 ? iter(num1, num2) : iter(num2, num1));
+};
+
 export const expectedResult = (mode) => {
-  let expression;
   let result;
-  let a;
-  let b;
   let operation;
   switch (mode) {
     case 0:
-      expression = getRandomNumber();
-      result = (expression % 2 === 0 ? 'yes' : 'no');
+      result = evenCheck();
       break;
     case 1:
-      a = getRandomNumber();
-      b = getRandomNumber();
       operation = getRandomOperation();
-      expression = `${a} ${operation} ${b}`;
-      result = `${getOperationResult(a, b, operation)}`;
+      result = `${getOperationResult(operation)}`;
+      break;
+    case 2:
+      result = `${euclidAlgorhytm()}`;
       break;
     default:
       console.log('Invalid game mode');
       break;
   }
-  console.log(`Question: ${expression}`);
   return result;
 };
 
