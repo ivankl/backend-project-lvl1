@@ -1,7 +1,8 @@
 import readLineSync from 'readline-sync';
 import { getOperationResult } from './calc';
-import { euclidAlgorhytm } from './euclid';
+import { gcdCalculation } from './euclid';
 import { evenCheck } from './even';
+import { valueOfSkippedNumber } from './progression';
 
 export const user = () => {
   const userName = readLineSync.question('May I have your name? ');
@@ -24,6 +25,10 @@ export const gameModeCheck = (mode) => {
       console.log('\nWelcome to the Brain Games!\nFind the greatest common divisor of given numbers.\n');
       gameId = 2;
       break;
+    case 'progression':
+      console.log('\nWelcome to the Brain Games!\nWhat number is missing in the progression?\n');
+      gameId = 3;
+      break;
     default:
       console.log('Invalid game mode');
       break;
@@ -41,7 +46,10 @@ export const expectedResult = (mode) => {
       result = `${getOperationResult()}`;
       break;
     case 2:
-      result = `${euclidAlgorhytm()}`;
+      result = `${gcdCalculation()}`;
+      break;
+    case 3:
+      result = `${valueOfSkippedNumber()}`;
       break;
     default:
       console.log('Invalid game mode');
