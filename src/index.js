@@ -1,4 +1,7 @@
 import readLineSync from 'readline-sync';
+import { getOperationResult } from './calc';
+import { euclidAlgorhytm } from './euclid';
+import { evenCheck } from './even';
 
 export const user = () => {
   const userName = readLineSync.question('May I have your name? ');
@@ -30,77 +33,14 @@ export const gameModeCheck = (mode) => {
 
 export const getRandomNumber = () => Math.floor(Math.random() * Math.floor(100));
 
-export const getRandomOperation = () => {
-  let operand;
-  switch (Math.floor(Math.random() * Math.floor(3))) {
-    case 0:
-      operand = '+';
-      break;
-    case 1:
-      operand = '-';
-      break;
-    case 2:
-      operand = '*';
-      break;
-    default:
-      console.log('Invalid operation');
-      break;
-  }
-  return operand;
-};
-
-export const getOperationResult = (operation) => {
-  let operationRes;
-  const a = getRandomNumber();
-  const b = getRandomNumber();
-  switch (operation) {
-    case '+':
-      operationRes = a + b;
-      break;
-    case '-':
-      operationRes = a - b;
-      break;
-    case '*':
-      operationRes = a * b;
-      break;
-    default:
-      console.log('Invalid operation');
-      break;
-  }
-  const expression = `${a} ${operation} ${b}`;
-  console.log(`Question: ${expression}`);
-  return operationRes;
-};
-
-export const evenCheck = () => {
-  const expression = getRandomNumber();
-  console.log(`Question: ${expression}`);
-  return (expression % 2 === 0 ? 'yes' : 'no');
-};
-
-export const euclidAlgorhytm = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
-  const iter = (a, b) => {
-    if (a % b === 0) {
-      return b;
-    }
-    return iter(b, a % b);
-  };
-  console.log(`Question: ${num1} ${num2}`);
-  return (num1 > num2 ? iter(num1, num2) : iter(num2, num1));
-};
-
 export const expectedResult = (mode) => {
   let result;
-  let operation;
   switch (mode) {
     case 0:
       result = evenCheck();
       break;
     case 1:
-      operation = getRandomOperation();
-      result = `${getOperationResult(operation)}`;
+      result = `${getOperationResult()}`;
       break;
     case 2:
       result = `${euclidAlgorhytm()}`;
