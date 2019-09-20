@@ -14,7 +14,7 @@ export const gameModeCheck = (mode) => {
       gameId = 0;
       break;
     case 'calc':
-      console.log('\nWelcome to the Brain Games!\nWhat is the result of the expression.\n');
+      console.log('\nWelcome to the Brain Games!\nWhat is the result of the expression?\n');
       gameId = 1;
       break;
     default:

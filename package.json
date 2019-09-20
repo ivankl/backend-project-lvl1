@@ -4,8 +4,8 @@
   "description": "hexlet project",
   "main": "dist/index.js",
   "bin": {
-    "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
+    "brain-even": "dist/bin/brain-even.js",
     "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
