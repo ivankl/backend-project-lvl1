@@ -13,7 +13,7 @@ const isPrime = (denominator, num) => {
 export const primeCheck = () => {
   const number = getRandomNumber();
   console.log(`Question: ${number}`);
-  return isPrime(2, number);
+  return isPrime(1, number);
 };
 
 export default primeCheck;
