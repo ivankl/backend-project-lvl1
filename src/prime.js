@@ -1,7 +1,7 @@
 import { getRandomNumber } from './randomNumber';
 
 const isPrime = (denominator, num) => {
-  if (num % denominator === 0) {
+  if (num % denominator === 0 || num === 1) {
     return 'no';
   }
   if (denominator > Math.sqrt(num)) {
@@ -13,7 +13,7 @@ const isPrime = (denominator, num) => {
 export const primeCheck = () => {
   const number = getRandomNumber();
   console.log(`Question: ${number}`);
-  return isPrime(1, number);
+  return isPrime(2, number);
 };
 
 export default primeCheck;
