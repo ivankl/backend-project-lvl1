@@ -3,6 +3,7 @@ import { getOperationResult } from './calc';
 import { gcdCalculation } from './euclid';
 import { evenCheck } from './even';
 import { valueOfSkippedNumber } from './progression';
+import { primeCheck } from './prime';
 
 export const user = () => {
   const userName = readLineSync.question('May I have your name? ');
@@ -29,6 +30,10 @@ export const gameModeCheck = (mode) => {
       console.log('\nWelcome to the Brain Games!\nWhat number is missing in the progression?\n');
       gameId = 3;
       break;
+    case 'prime':
+      console.log('\nWelcome to the Brain Games!\nAnswer "yes" if given number is prime. Otherwise answer "no".\n');
+      gameId = 4;
+      break;
     default:
       console.log('Invalid game mode');
       break;
@@ -50,6 +55,9 @@ export const expectedResult = (mode) => {
       break;
     case 3:
       result = `${valueOfSkippedNumber()}`;
+      break;
+    case 4:
+      result = `${primeCheck()}`;
       break;
     default:
       console.log('Invalid game mode');
