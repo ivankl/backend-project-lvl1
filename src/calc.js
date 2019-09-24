@@ -4,27 +4,28 @@ const getRandomOperation = () => Math.floor(Math.random() * Math.floor(3));
 
 export const getOperationResult = () => {
   let operationRes;
-  let operation = getRandomOperation();
+  let operand;
+  const operation = getRandomOperation();
   const a = getRandomNumber();
   const b = getRandomNumber();
   switch (operation) {
-    case '0':
+    case 0:
       operationRes = a + b;
-      operation = '+';
+      operand = '+';
       break;
-    case '1':
+    case 1:
       operationRes = a - b;
-      operation = '-';
+      operand = '-';
       break;
-    case '2':
+    case 2:
       operationRes = a * b;
-      operation = '*';
+      operand = '*';
       break;
     default:
       console.log('Invalid operation');
       break;
   }
-  const expression = `${a} ${operation} ${b}`;
+  const expression = `${a} ${operand} ${b}`;
   console.log(`Question: ${expression}`);
   return operationRes;
 };
