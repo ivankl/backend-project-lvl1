@@ -1,9 +1,9 @@
 import { getRandomNumber } from './randomNumber';
 
 export const evenCheck = () => {
-  const expression = getRandomNumber();
-  console.log(`Question: ${expression}`);
-  return (expression % 2 === 0 ? 'yes' : 'no');
+  const number = getRandomNumber();
+  console.log(`Question: ${number}`);
+  return (number % 2 === 0 ? 'yes' : 'no');
 };
 
 export default evenCheck;

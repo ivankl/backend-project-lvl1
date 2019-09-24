@@ -1,38 +1,24 @@
 import { getRandomNumber } from './randomNumber';
 
-const getRandomOperation = () => {
-  let operand;
-  switch (Math.floor(Math.random() * Math.floor(3))) {
-    case 0:
-      operand = '+';
-      break;
-    case 1:
-      operand = '-';
-      break;
-    case 2:
-      operand = '*';
-      break;
-    default:
-      console.log('Invalid operation');
-      break;
-  }
-  return operand;
-};
+const getRandomOperation = () => Math.floor(Math.random() * Math.floor(3));
 
 export const getOperationResult = () => {
   let operationRes;
-  const operation = getRandomOperation();
+  let operation = getRandomOperation();
   const a = getRandomNumber();
   const b = getRandomNumber();
   switch (operation) {
-    case '+':
+    case '0':
       operationRes = a + b;
+      operation = '+';
       break;
-    case '-':
+    case '1':
       operationRes = a - b;
+      operation = '-';
       break;
-    case '*':
+    case '2':
       operationRes = a * b;
+      operation = '*';
       break;
     default:
       console.log('Invalid operation');
