@@ -1,9 +1,9 @@
 import readLineSync from 'readline-sync';
-import { getOperationResult } from './calc';
-import { gcdCalculation } from './euclid';
-import { evenCheck } from './even';
-import { valueOfSkippedNumber } from './progression';
-import { primeCheck } from './prime';
+import { getOperationResult } from './games/calc';
+import { gcdCalculation } from './games/gcd';
+import { evenCheck } from './games/even';
+import { valueOfSkippedNumber } from './games/progression';
+import { primeCheck } from './games/prime';
 
 export const user = () => {
   const userName = readLineSync.question('May I have your name? ');

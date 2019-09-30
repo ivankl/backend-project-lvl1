@@ -1,6 +1,6 @@
 {
   "name": "brain-games-ivank",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "hexlet project",
   "main": "dist/index.js",
   "bin": {
@@ -23,6 +23,10 @@
     "type": "git",
     "url": "git+https://github.com/ivankl/backend-project-lvl1.git"
   },
+  "keywords": [
+    "hexlet",
+    "first project"
+  ],
   "author": "Kozlov I.",
   "license": "ISC",
   "bugs": {
