@@ -4,16 +4,16 @@
 
 "Is number even?":
 
-[![asciicast](https://asciinema.org/a/xCbT6yBvQU26vf6kywAP7jBqS.svg)](https://asciinema.org/a/xCbT6yBvQU26vf6kywAP7jBqS)
+[![asciicast](https://asciinema.org/a/SHia44D7KkEr75Pc7K2TpuEza.svg)](https://asciinema.org/a/SHia44D7KkEr75Pc7K2TpuEza)
 
 "What is the result of the expression?":
 
-[![asciicast](https://asciinema.org/a/qYFDe3yo5RPKCmb31PctoO4n6.svg)](https://asciinema.org/a/qYFDe3yo5RPKCmb31PctoO4n6)
+[![asciicast](https://asciinema.org/a/NWCQGd1Mxpjk4INARs3AHZY0u.svg)](https://asciinema.org/a/NWCQGd1Mxpjk4INARs3AHZY0u)
 
 "What number is missing in the progression?":
 
-[![asciicast](https://asciinema.org/a/GIQmUy4xA8Y6waYHl2N9Cu6oU.svg)](https://asciinema.org/a/GIQmUy4xA8Y6waYHl2N9Cu6oU)
+[![asciicast](https://asciinema.org/a/I67W9CIYPM093UVHAsJeCIFxU.svg)](https://asciinema.org/a/I67W9CIYPM093UVHAsJeCIFxU)
 
 "Is number prime?":
 
-[![asciicast](https://asciinema.org/a/Cx3cib9V15WOa4oABYesZitbL.svg)](https://asciinema.org/a/Cx3cib9V15WOa4oABYesZitbL)
+[![asciicast](https://asciinema.org/a/M8aAYT0WnfXFUi30sKDZNqv2O.svg)](https://asciinema.org/a/M8aAYT0WnfXFUi30sKDZNqv2O)
