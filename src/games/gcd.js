@@ -1,4 +1,5 @@
-import { getRandomNumber } from './randomNumber';
+import { getRandomNumber, user, brainGame } from '../index';
+
 
 const euclidAlgorhytm = (a, b) => {
   if (a % b === 0) {
@@ -24,4 +25,10 @@ export const gcdCalculation = () => {
   return (num1 > num2 ? euclidAlgorhytm(num1, num2) : euclidAlgorhytm(num2, num1));
 };
 
-export default euclidAlgorhytm;
+export const gcdGame = () => {
+  const name = user();
+  console.log('\nFind the greatest common divisor of given numbers.\n');
+  brainGame(gcdCalculation, name);
+};
+
+export default gcdGame;

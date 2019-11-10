@@ -1,23 +1,23 @@
-import { getRandomNumber } from './randomNumber';
+import { getRandomNumber, user, brainGame } from '../index';
 
 const getRandomOperation = () => Math.floor(Math.random() * Math.floor(3));
 
-export const getOperationResult = () => {
+const getOperationResult = () => {
   let operationRes;
   let operand;
-  const operation = getRandomOperation();
+  const operands = ['+', '-', '*'];
   const a = getRandomNumber();
   const b = getRandomNumber();
-  switch (operation) {
-    case 0:
+  switch (operands[getRandomOperation()]) {
+    case '+':
       operationRes = a + b;
       operand = '+';
       break;
-    case 1:
+    case '-':
       operationRes = a - b;
       operand = '-';
       break;
-    case 2:
+    case '*':
       operationRes = a * b;
       operand = '*';
       break;
@@ -30,4 +30,10 @@ export const getOperationResult = () => {
   return operationRes;
 };
 
-export default getOperationResult;
+export const calcGame = () => {
+  const name = user();
+  console.log('\nWhat is the result of the expression?\n');
+  brainGame(getOperationResult, name);
+};
+
+export default calcGame;

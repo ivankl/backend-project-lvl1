@@ -1,19 +1,29 @@
-import { getRandomNumber } from './randomNumber';
+import { getRandomNumber, user, brainGame } from '../index';
 
-const isPrime = (denominator, num) => {
-  if (num % denominator === 0 || num === 1) {
-    return 'no';
-  }
-  if (denominator > Math.sqrt(num)) {
-    return 'yes';
-  }
-  return isPrime(denominator + 1, num);
+
+const isPrime = (num) => {
+  const iter = (denominator, n) => {
+    if (denominator > Math.sqrt(num)) {
+      return 'yes';
+    }
+    if (num % denominator === 0 || n === 1) {
+      return 'no';
+    }
+    return iter(denominator + 1, n);
+  };
+  return iter(2, num);
 };
 
-export const primeCheck = () => {
+const primeCheck = () => {
   const number = getRandomNumber();
   console.log(`Question: ${number}`);
-  return isPrime(2, number);
+  return isPrime(number);
 };
 
-export default primeCheck;
+export const primeGame = () => {
+  const name = user();
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+  brainGame(primeCheck, name);
+};
+
+export default primeGame;
