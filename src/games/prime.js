@@ -15,9 +15,9 @@ const isPrime = (num) => {
 };
 
 const primeCheck = () => {
-  const number = getRandomNumber();
-  console.log(`Question: ${number}`);
-  return isPrime(number);
+  const currentNumber = getRandomNumber();
+  console.log(`Question: ${currentNumber}`);
+  return isPrime(currentNumber);
 };
 
 export const primeGame = () => {
