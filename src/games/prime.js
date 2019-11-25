@@ -1,4 +1,4 @@
-import { getRandomNumber, user, brainGame } from '../index';
+import { getRandomNumber, brainGame } from '../index';
 
 
 const isPrime = (num) => {
@@ -16,14 +16,9 @@ const isPrime = (num) => {
 
 const primeCheck = () => {
   const currentNumber = getRandomNumber();
-  console.log(`Question: ${currentNumber}`);
-  return isPrime(currentNumber);
+  return { result: isPrime(currentNumber), question: `${currentNumber}` };
 };
 
-export const primeGame = () => {
-  const name = user();
-  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
-  brainGame(primeCheck, name);
-};
+export const primeGame = () => brainGame(primeCheck, 'Answer "yes" if the number is prime, otherwise answer "no".');
 
 export default primeGame;

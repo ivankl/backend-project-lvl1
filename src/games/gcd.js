@@ -1,17 +1,16 @@
-import { getRandomNumber, user, brainGame } from '../index';
+import { getRandomNumber, brainGame } from '../index';
 
 
-const euclidAlgorhytm = (a, b) => {
+const findGCD = (a, b) => {
   if (a % b === 0) {
     return b;
   }
-  return euclidAlgorhytm(b, a % b);
+  return findGCD(b, a % b);
 };
 
 export const gcdCalculation = () => {
   const num1 = getRandomNumber();
   const num2 = getRandomNumber();
-  console.log(`Question: ${num1} ${num2}`);
   if (num1 === 0 && num2 === 0) {
     console.log('\nWow, you are lucky! Both numbers are 0. It is known, that GCD(0,0) = 0.\n',
       'Please, type 0 and press Enter. It counts as a correct answer\n');
@@ -22,13 +21,9 @@ export const gcdCalculation = () => {
       'It will be counted as a "correct" anwser. Sorry.');
     return 0;
   }
-  return (num1 > num2 ? euclidAlgorhytm(num1, num2) : euclidAlgorhytm(num2, num1));
+  return { result: (num1 > num2 ? findGCD(num1, num2) : findGCD(num2, num1)), question: `${num1} ${num2}` };
 };
 
-export const gcdGame = () => {
-  const name = user();
-  console.log('\nFind the greatest common divisor of given numbers.\n');
-  brainGame(gcdCalculation, name);
-};
+export const gcdGame = () => brainGame(gcdCalculation, '\nFind the greatest common divisor of given numbers.');
 
 export default gcdGame;

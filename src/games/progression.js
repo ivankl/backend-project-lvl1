@@ -1,4 +1,4 @@
-import { getRandomNumber, user, brainGame } from '../index';
+import { getRandomNumber, brainGame } from '../index';
 
 
 const displayProgression = (string, index, missingElement, currentElement, step) => {
@@ -15,14 +15,9 @@ const valueOfSkippedNumber = () => {
   const initialNumber = getRandomNumber();
   const step = getRandomNumber();
   const location = Math.floor(Math.random() * Math.floor(9));
-  console.log(`Question: ${displayProgression('', 0, location, initialNumber, step)}`);
-  return (initialNumber + location * step);
+  return { result: (initialNumber + location * step), question: `${displayProgression('', 0, location, initialNumber, step)}` };
 };
 
-export const progressionGame = () => {
-  const name = user();
-  console.log('\nWhat number is missing in the progression?\n');
-  brainGame(valueOfSkippedNumber, name);
-};
+export const progressionGame = () => brainGame(valueOfSkippedNumber, '\nWhat number is missing in the progression?');
 
 export default progressionGame;

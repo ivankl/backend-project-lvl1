@@ -1,6 +1,6 @@
 {
   "name": "brain-games-ivank",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "hexlet project",
   "main": "dist/index.js",
   "bin": {
