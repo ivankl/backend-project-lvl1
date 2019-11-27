@@ -7,7 +7,6 @@ const evenCheck = () => {
   return { result: (isEven(currentNumber) ? 'yes' : 'no'), question: `${currentNumber}` };
 };
 
-export const evenGame = () => brainGame(evenCheck, '\nAnswer "yes" if the number is even, otherwise answer "no".');
+const gameRules = '\nAnswer "yes" if the number is even, otherwise answer "no".';
 
-
-export default evenGame;
+export default () => brainGame(evenCheck, gameRules);
