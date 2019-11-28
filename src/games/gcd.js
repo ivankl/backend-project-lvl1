@@ -9,17 +9,17 @@ const findGCD = (a, b) => {
 };
 
 export const gcdCalculation = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
-  if (num1 === 0 && num2 === 0) {
+  const n1 = getRandomNumber();
+  const n2 = getRandomNumber();
+  if (n1 === 0 && n2 === 0) {
     return 0;
   }
-  if (num1 === 0 || num2 === 0) {
+  if (n1 === 0 || n2 === 0) {
     return 0;
   }
-  return { result: (num1 > num2 ? findGCD(num1, num2) : findGCD(num2, num1)), question: `${num1} ${num2}` };
+  return { result: (n1 > n2 ? findGCD(n1, n2) : findGCD(n2, n1)), question: `${n1} ${n2}` };
 };
 
-const gameRules = '\nFind the greatest common divisor of given numbers.';
+const gameRule = '\nFind the greatest common divisor of given numbers.';
 
-export default () => brainGame(gcdCalculation, gameRules);
+export default () => brainGame(gcdCalculation, gameRule);

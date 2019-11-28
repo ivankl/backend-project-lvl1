@@ -19,6 +19,6 @@ const valueOfSkippedNumber = () => {
   return { result: (firstElement + location * step), question: `${displayProgression('', 0, location, firstElement, step, progressionLength)}` };
 };
 
-const gameRules = '\nWhat number is missing in the progression?';
+const gameRule = '\nWhat number is missing in the progression?';
 
-export default () => brainGame(valueOfSkippedNumber, gameRules);
+export default () => brainGame(valueOfSkippedNumber, gameRule);

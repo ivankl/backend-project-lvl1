@@ -13,16 +13,18 @@ export const userReplyCheck = (expectedAnswer, name) => {
   return 'Wrong';
 };
 
+const answersNeededToWin = 3;
+
 export const brainGame = (currentGameFunction, greeting) => {
   console.log(`\nWelcome to the Brain Games!\n${greeting}`);
   const name = readLineSync.question('\nMay I have your name? ');
   console.log(`Hi, ${name}!`);
   let correctAnswers = 0;
-  let gameQuestion = {};
-  while (correctAnswers < 3) {
-    gameQuestion = currentGameFunction();
-    console.log(`\nQuestion: ${gameQuestion.question}`);
-    if (userReplyCheck(gameQuestion.result, name) === 'Correct') {
+  let currentRound = {};
+  while (correctAnswers < answersNeededToWin) {
+    currentRound = currentGameFunction();
+    console.log(`\nQuestion: ${currentRound.question}`);
+    if (userReplyCheck(currentRound.result, name) === 'Correct') {
       correctAnswers += 1;
     } else {
       correctAnswers = 0;

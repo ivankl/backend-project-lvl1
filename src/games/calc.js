@@ -7,21 +7,18 @@ const operations = ['+', '-', '*'];
 
 const calculateOperationResult = () => {
   let operationRes;
-  let operation;
   const a = getRandomNumber();
   const b = getRandomNumber();
-  switch (operations[getRandomOperation(operations.length - 1)]) {
+  const operation = operations[getRandomOperation(operations.length - 1)];
+  switch (operation) {
     case '+':
       operationRes = a + b;
-      operation = '+';
       break;
     case '-':
       operationRes = a - b;
-      operation = '-';
       break;
     case '*':
       operationRes = a * b;
-      operation = '*';
       break;
     default:
       return null;
@@ -29,6 +26,6 @@ const calculateOperationResult = () => {
   return { result: operationRes, question: `${a} ${operation} ${b}` };
 };
 
-const gameRules = '\nWhat is the result of the expression?';
+const gameRule = '\nWhat is the result of the expression?';
 
-export default () => brainGame(calculateOperationResult, gameRules);
+export default () => brainGame(calculateOperationResult, gameRule);

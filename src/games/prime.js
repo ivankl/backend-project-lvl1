@@ -15,10 +15,10 @@ const isPrime = (num) => {
 };
 
 const primeCheck = () => {
-  const currentNumber = getRandomNumber();
-  return { result: (isPrime(currentNumber) ? 'yes' : 'no'), question: `${currentNumber}` };
+  const gameQuestion = getRandomNumber();
+  return { result: (isPrime(gameQuestion) ? 'yes' : 'no'), question: `${gameQuestion}` };
 };
 
-const gameRules = 'Answer "yes" if the number is prime, otherwise answer "no".';
+const gameRule = 'Answer "yes" if the number is prime, otherwise answer "no".';
 
-export default () => brainGame(primeCheck, gameRules);
+export default () => brainGame(primeCheck, gameRule);
