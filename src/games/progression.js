@@ -1,6 +1,7 @@
 import { getRandomNumber, brainGame } from '../index';
 
 const progressionLength = 10;
+const gameRule = '\nWhat number is missing in the progression?';
 
 const displayProgression = (string, index, missingElement, currentElement, step, elementAmount) => {
   if (index > elementAmount - 1) {
@@ -18,7 +19,5 @@ const valueOfSkippedNumber = () => {
   const location = getRandomNumber(progressionLength - 1);
   return { result: (firstElement + location * step), question: `${displayProgression('', 0, location, firstElement, step, progressionLength)}` };
 };
-
-const gameRule = '\nWhat number is missing in the progression?';
 
 export default () => brainGame(valueOfSkippedNumber, gameRule);

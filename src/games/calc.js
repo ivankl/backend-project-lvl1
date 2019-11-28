@@ -2,7 +2,7 @@ import { getRandomNumber, brainGame } from '../index';
 
 const getRandomOperation = (maxNumber) => getRandomNumber(maxNumber);
 
-
+const gameRule = '\nWhat is the result of the expression?';
 const operations = ['+', '-', '*'];
 
 const calculateOperationResult = () => {
@@ -25,7 +25,5 @@ const calculateOperationResult = () => {
   }
   return { result: operationRes, question: `${a} ${operation} ${b}` };
 };
-
-const gameRule = '\nWhat is the result of the expression?';
 
 export default () => brainGame(calculateOperationResult, gameRule);
