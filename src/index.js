@@ -1,5 +1,7 @@
 import readLineSync from 'readline-sync';
 
+const answersNeededToWin = 3;
+
 export const getRandomNumber = (max = 30, min = 0) => Math
   .floor(Math.random() * (max - min + 1)) + min;
 
@@ -12,8 +14,6 @@ export const userReplyCheck = (expectedAnswer, name) => {
   console.log(`'${reply}' is wrong answer :(. Correct answer was '${expectedAnswer}'.\nLet's try again, ${name}!`);
   return 'Wrong';
 };
-
-const answersNeededToWin = 3;
 
 export const brainGame = (currentGameFunction, greeting) => {
   console.log(`\nWelcome to the Brain Games!\n${greeting}`);
