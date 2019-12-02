@@ -1,15 +1,14 @@
-import { getRandomNumber, brainGame } from '../index';
+import brainGame from '../index';
+import getRandomNumber from '../utils';
 
-const getRandomOperation = (maxNumber) => getRandomNumber(maxNumber);
-
-const gameRule = '\nWhat is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const calculateOperationResult = () => {
+const calculateResultOfExpression = () => {
   let operationRes;
   const a = getRandomNumber();
   const b = getRandomNumber();
-  const operation = operations[getRandomOperation(operations.length - 1)];
+  const operation = operations[getRandomNumber(operations.length - 1)];
   switch (operation) {
     case '+':
       operationRes = a + b;
@@ -23,7 +22,7 @@ const calculateOperationResult = () => {
     default:
       return null;
   }
-  return { result: operationRes, question: `${a} ${operation} ${b}` };
+  return { answer: operationRes, question: `${a} ${operation} ${b}` };
 };
 
-export default () => brainGame(calculateOperationResult, gameRule);
+export default () => brainGame(calculateResultOfExpression, gameRule);

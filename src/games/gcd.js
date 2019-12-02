@@ -1,6 +1,7 @@
-import { getRandomNumber, brainGame } from '../index';
+import brainGame from '../index';
+import getRandomNumber from '../utils';
 
-const gameRule = '\nFind the greatest common divisor of given numbers.';
+const gameRule = 'Find the greatest common divisor of given numbers.';
 
 const findGCD = (a, b) => {
   if (a % b === 0) {
@@ -18,7 +19,7 @@ export const gcdCalculation = () => {
   if (n1 === 0 || n2 === 0) {
     return 0;
   }
-  return { result: (n1 > n2 ? findGCD(n1, n2) : findGCD(n2, n1)), question: `${n1} ${n2}` };
+  return { answer: findGCD(Math.max(n1, n2), Math.min(n1, n2)), question: `${n1} ${n2}` };
 };
 
 export default () => brainGame(gcdCalculation, gameRule);

@@ -1,23 +1,24 @@
-import { getRandomNumber, brainGame } from '../index';
+import brainGame from '../index';
+import getRandomNumber from '../utils';
 
 const progressionLength = 10;
-const gameRule = '\nWhat number is missing in the progression?';
+const gameRule = 'What number is missing in the progression?';
 
-const displayProgression = (string, index, missingElement, currentElement, step, elementAmount) => {
-  if (index > elementAmount - 1) {
-    return string;
+const calculateProgression = (result, index, missingElement, currentElement, step) => {
+  if (index > progressionLength - 1) {
+    return result;
   }
   if (index === missingElement) {
-    return displayProgression(`${string} ..`, index + 1, missingElement, currentElement + step, step, elementAmount);
+    return calculateProgression(`${result} ..`, index + 1, missingElement, currentElement + step, step);
   }
-  return displayProgression(`${string} ${currentElement}`, index + 1, missingElement, currentElement + step, step, elementAmount);
+  return calculateProgression(`${result} ${currentElement}`, index + 1, missingElement, currentElement + step, step);
 };
 
-const valueOfSkippedNumber = () => {
+const calculateValueOfSkippedNumber = () => {
   const firstElement = getRandomNumber();
   const step = getRandomNumber();
   const location = getRandomNumber(progressionLength - 1);
-  return { result: (firstElement + location * step), question: `${displayProgression('', 0, location, firstElement, step, progressionLength)}` };
+  return { answer: (firstElement + location * step), question: `${calculateProgression('', 0, location, firstElement, step)}` };
 };
 
-export default () => brainGame(valueOfSkippedNumber, gameRule);
+export default () => brainGame(calculateValueOfSkippedNumber, gameRule);
