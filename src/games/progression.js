@@ -4,21 +4,22 @@ import getRandomNumber from '../utils';
 const progressionLength = 10;
 const gameRule = 'What number is missing in the progression?';
 
-const calculateProgression = (result, index, missingElement, currentElement, step) => {
-  if (index > progressionLength - 1) {
-    return result;
+const calculateProgression = (missingElementIndex, initialElement, step) => {
+  let result = '';
+  for (let i = 0; i < progressionLength; i += 1) {
+    if (i === missingElementIndex) {
+      result = `${result} ..`;
+    }
+    result = `${result} ${initialElement + i * step}`;
   }
-  if (index === missingElement) {
-    return calculateProgression(`${result} ..`, index + 1, missingElement, currentElement + step, step);
-  }
-  return calculateProgression(`${result} ${currentElement}`, index + 1, missingElement, currentElement + step, step);
+  return result;
 };
 
-const calculateValueOfSkippedNumber = () => {
+const calculateValueOfSkippedElement = () => {
   const firstElement = getRandomNumber();
   const step = getRandomNumber();
   const location = getRandomNumber(progressionLength - 1);
-  return { answer: (firstElement + location * step), question: `${calculateProgression('', 0, location, firstElement, step)}` };
+  return { answer: (firstElement + location * step), question: `${calculateProgression(location, firstElement, step)}` };
 };
 
-export default () => brainGame(calculateValueOfSkippedNumber, gameRule);
+export default () => brainGame(calculateValueOfSkippedElement, gameRule);
