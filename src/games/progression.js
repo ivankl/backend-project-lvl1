@@ -16,11 +16,11 @@ const generateElements = (missingElementIndex, initialElement, step) => {
   return result;
 };
 
-const calculateGameQuestion = () => {
+const generateGameQuestion = () => {
   const firstElement = getRandomNumber();
   const step = getRandomNumber();
   const location = getRandomNumber(progressionLength - 1);
   return { answer: (firstElement + location * step), question: `${generateElements(location, firstElement, step)}` };
 };
 
-export default () => brainGame(calculateGameQuestion, gameRule);
+export default () => brainGame(generateGameQuestion, gameRule);
