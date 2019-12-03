@@ -10,7 +10,7 @@ const findGCD = (a, b) => {
   return findGCD(b, a % b);
 };
 
-export const gcdCalculation = () => {
+export const сalculateResult = () => {
   const n1 = getRandomNumber();
   const n2 = getRandomNumber();
   if (n1 === 0 && n2 === 0) {
@@ -22,4 +22,4 @@ export const gcdCalculation = () => {
   return { answer: findGCD(Math.max(n1, n2), Math.min(n1, n2)), question: `${n1} ${n2}` };
 };
 
-export default () => brainGame(gcdCalculation, gameRule);
+export default () => brainGame(сalculateResult, gameRule);
