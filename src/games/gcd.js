@@ -10,16 +10,16 @@ const findGCD = (a, b) => {
   return findGCD(b, a % b);
 };
 
-export const сalculateResult = () => {
+const generateGameQuestion = () => {
   const n1 = getRandomNumber();
   const n2 = getRandomNumber();
   if (n1 === 0 && n2 === 0) {
-    return 0;
+    return { answer: `${0}`, question: `${n1} ${n2}` };
   }
   if (n1 === 0 || n2 === 0) {
-    return 0;
+    return { answer: `${0}`, question: `${n1} ${n2}` };
   }
-  return { answer: findGCD(Math.max(n1, n2), Math.min(n1, n2)), question: `${n1} ${n2}` };
+  return { answer: `${findGCD(Math.max(n1, n2), Math.min(n1, n2))}`, question: `${n1} ${n2}` };
 };
 
-export default () => brainGame(сalculateResult, gameRule);
+export default () => brainGame(generateGameQuestion, gameRule);

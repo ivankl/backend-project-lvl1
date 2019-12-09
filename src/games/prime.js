@@ -16,9 +16,9 @@ const isPrime = (num) => {
   return iter(2, num);
 };
 
-const primeCheck = () => {
+const generateGameQuestion = () => {
   const gameQuestion = getRandomNumber();
   return { answer: (isPrime(gameQuestion) ? 'yes' : 'no'), question: `${gameQuestion}` };
 };
 
-export default () => brainGame(primeCheck, gameRule);
+export default () => brainGame(generateGameQuestion, gameRule);
