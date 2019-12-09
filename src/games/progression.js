@@ -4,9 +4,9 @@ import getRandomNumber from '../utils';
 const progressionLength = 10;
 const gameRule = 'What number is missing in the progression?';
 
-const generateElementsForGameQuestion = (missingElementIndex, initialElement, step) => {
+const generateQuestionElements = (missingElementIndex, initialElement, step, numberOfElements) => {
   let result = '';
-  for (let i = 0; i < progressionLength; i += 1) {
+  for (let i = 0; i < numberOfElements; i += 1) {
     if (i === missingElementIndex) {
       result = `${result} ..`;
     } else {
@@ -20,7 +20,7 @@ const generateGameQuestion = () => {
   const firstElement = getRandomNumber();
   const step = getRandomNumber();
   const location = getRandomNumber(progressionLength - 1);
-  return { answer: `${(firstElement + location * step)}`, question: `${generateElementsForGameQuestion(location, firstElement, step)}` };
+  return { answer: `${(firstElement + location * step)}`, question: `${generateQuestionElements(location, firstElement, step, progressionLength)}` };
 };
 
 export default () => brainGame(generateGameQuestion, gameRule);
