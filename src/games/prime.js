@@ -18,7 +18,7 @@ const isPrime = (num) => {
 
 const generateGameQuestion = () => {
   const gameQuestion = getRandomNumber();
-  return { answer: (isPrime(gameQuestion) ? 'yes' : 'no'), question: `${gameQuestion}` };
+  return { answer: (isPrime(gameQuestion) ? 'yes' : 'no'), question: gameQuestion };
 };
 
 export default () => brainGame(generateGameQuestion, gameRule);

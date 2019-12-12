@@ -1,6 +1,6 @@
 ---
 
-plugins: 
+plugins:
   - babel
 
 env:

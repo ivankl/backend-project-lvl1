@@ -1,8 +1,7 @@
 {
   "name": "brain-games-ivank",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "hexlet project",
-  "main": "dist/index.js",
   "bin": {
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-even": "dist/bin/brain-even.js",

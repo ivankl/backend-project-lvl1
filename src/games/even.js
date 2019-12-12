@@ -6,7 +6,7 @@ const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateGameQuestion = () => {
   const gameQuestion = getRandomNumber();
-  return { answer: (isEven(gameQuestion) ? 'yes' : 'no'), question: `${gameQuestion}` };
+  return { answer: (isEven(gameQuestion) ? 'yes' : 'no'), question: gameQuestion };
 };
 
 export default () => brainGame(generateGameQuestion, gameRule);

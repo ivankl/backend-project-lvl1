@@ -7,16 +7,15 @@ export default (currentGameFunction, greeting) => {
   const name = readLineSync.question('\nMay I have your name? ');
   console.log(`Hi, ${name}!`);
   let currentRound = {};
-  for (let correctAnswerCount = 1;
-    correctAnswerCount <= answersNeededToWin; correctAnswerCount += 1) {
+  for (let i = 1; i <= answersNeededToWin; i += 1) {
     currentRound = currentGameFunction();
     console.log(`\nQuestion: ${currentRound.question}`);
-    const userReply = readLineSync.question('Your answer: ').toLowerCase();
-    if (currentRound.answer === userReply) {
+    const userAnswer = readLineSync.question('Your answer: ').toLowerCase();
+    if (currentRound.answer === userAnswer) {
       console.log('Correct!');
     } else {
-      correctAnswerCount = 0;
-      console.log(`'${userReply}' is wrong answer :(`);
+      i = 0;
+      console.log(`'${userAnswer}' is wrong answer :(`);
       console.log(`Correct answer was '${currentRound.answer}'.\nLet's try again, ${name}!`);
     }
   }

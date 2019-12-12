@@ -4,7 +4,7 @@ import getRandomNumber from '../utils';
 const gameRule = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const calculateResult = () => {
+const generateGameQuestion = () => {
   let operationResult;
   const a = getRandomNumber();
   const b = getRandomNumber();
@@ -25,4 +25,4 @@ const calculateResult = () => {
   return { answer: `${operationResult}`, question: `${a} ${operation} ${b}` };
 };
 
-export default () => brainGame(calculateResult, gameRule);
+export default () => brainGame(generateGameQuestion, gameRule);
