@@ -6,29 +6,29 @@ This project contains 5 CLI applications. To install the package use the followi
 
 These CLI applications allow to play the following games:
 
-h3. "Is number even?"
+h3."Is number even?"
 
 To launch use `brain-even` command:
 
 [![asciicast](https://asciinema.org/a/SHia44D7KkEr75Pc7K2TpuEza.svg)](https://asciinema.org/a/SHia44D7KkEr75Pc7K2TpuEza)
 
-h3. "What is the result of the expression?"
+h3."What is the result of the expression?"
 
 To launch use `brain-calc` command:
 
 [![asciicast](https://asciinema.org/a/NWCQGd1Mxpjk4INARs3AHZY0u.svg)](https://asciinema.org/a/NWCQGd1Mxpjk4INARs3AHZY0u)
 
-h3. "What number is missing in the progression?", to launch use `brain-progression` command:
+h3."What number is missing in the progression?", to launch use `brain-progression` command:
 
 [![asciicast](https://asciinema.org/a/I67W9CIYPM093UVHAsJeCIFxU.svg)](https://asciinema.org/a/I67W9CIYPM093UVHAsJeCIFxU)
 
-h3. "Is number prime?".
+h3."Is number prime?".
 
 To launch use `brain-prime` command:
 
 [![asciicast](https://asciinema.org/a/M8aAYT0WnfXFUi30sKDZNqv2O.svg)](https://asciinema.org/a/M8aAYT0WnfXFUi30sKDZNqv2O)
 
-h3. "What is the greatest common divisor for these numbers?"
+h3."What is the greatest common divisor for these numbers?"
 
 To launch use `brain-gcd` command:
 
